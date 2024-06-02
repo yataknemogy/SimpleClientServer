@@ -1,18 +1,23 @@
-<h1>Однопоточный клиент-сервер</h1>
+# Single-Threaded Client-Server
 
 ---
-***Server.java:***
 
-- Создание серверного сокета: В вашем языке программирования создайте объект серверного сокета. Определите порт, который будет прослушивать сервер.
-- Ожидание подключения клиента: Используя метод accept() серверного сокета, ожидайте подключения клиента. Когда клиент подключается, создается новый сокет для обмена данными с клиентом.
-- Создание потоков ввода-вывода: Создайте потоки для чтения данных от клиента и записи данных обратно клиенту через сокет.
-- Обработка данных: В бесконечном цикле читайте данные от клиента, отправляйте обратно те же данные и продолжайте этот процесс до тех пор, пока клиент не разорвет соединение.
-- Закрытие соединения: После завершения обмена данными закройте потоки ввода-вывода и сокеты.
+**Server.java:**
+
+- **Creating a Server Socket:** In your programming language, create a server socket object. Define the port that the server will listen on.
+- **Waiting for Client Connection:** Use the `accept()` method of the server socket to wait for a client connection. When a client connects, a new socket is created for data exchange with the client.
+- **Creating I/O Streams:** Create streams for reading data from the client and writing data back to the client through the socket.
+- **Processing Data:** In an infinite loop, read data from the client, send the same data back, and continue this process until the client disconnects.
+- **Closing the Connection:** After the data exchange is complete, close the I/O streams and sockets.
+
 ---
-***Client.java:***
-- Создание клиентского сокета: Создайте клиентский сокет, указав адрес и порт сервера, к которому хотите подключиться.
-- Создание потоков ввода-вывода: Создайте потоки для чтения данных с консоли и для чтения/записи данных через сокет.
-- Чтение ввода пользователя и отправка на сервер: В бесконечном цикле читайте данные, введенные пользователем с консоли, и отправляйте их на сервер через клиентский сокет.
-- Получение ответа от сервера и вывод на экран: Читайте ответ от сервера через клиентский сокет и выводите его на экран.
-- Закрытие соединения: После завершения обмена данными закройте потоки ввода-вывода и клиентский сокет.
+
+**Client.java:**
+
+- **Creating a Client Socket:** Create a client socket specifying the server's address and port to connect to.
+- **Creating I/O Streams:** Create streams for reading data from the console and for reading/writing data through the socket.
+- **Reading User Input and Sending to Server:** In an infinite loop, read user input from the console and send it to the server through the client socket.
+- **Receiving Response from Server and Displaying:** Read the response from the server through the client socket and display it on the screen.
+- **Closing the Connection:** After the data exchange is complete, close the I/O streams and client socket.
+
 ---
